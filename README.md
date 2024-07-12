@@ -1,8 +1,10 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://www.emailjs.com/docs/examples/reactjs/
+https://github.com/techiediaries/fake-api-jwt-json-server
 
-Currently, two official plugins are available:
+API:
+https://669156aa26c2a69f6e8f6d81.mockapi.io/diary
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+correo: diarioreact@gmail.com
+contraseña: proyectodiarioreact2
