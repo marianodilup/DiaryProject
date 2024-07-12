@@ -13,18 +13,7 @@ useEffect(() => {
       });
     }, []); // va a ejecutar una sola vez, cuando cargue la página.
 
-    const addPost = (newPost) => {
-        fetch("https://669156aa26c2a69f6e8f6d81.mockapi.io/diary", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newPost),
-       
   
-      })
-    
-      .then((response) => response.json())
-      .then((data) => setPostList([...postList, newPost]));
-    };
     
     
       return { postList, addPost }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
