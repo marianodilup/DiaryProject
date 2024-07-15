@@ -16,5 +16,5 @@ useEffect(() => {
   
     
     
-      return { postList, addPost }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
+      return { postList }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
     };
