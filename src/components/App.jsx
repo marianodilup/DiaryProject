@@ -1,11 +1,14 @@
 import { Routes } from "react-router-dom"
-import { ApiContext, useApiContext, } from "./Context/apiContext"
-import Select from "./Select/Select"
+import { ApiContext, useApiContext, } from "./Context/ApiContext"
+import CreatePost from "./CreatePost/CreatePost"
+
 
 function App() {
   const apiContext = useApiContext()
 
   return (
+    <>
+    <CreatePost/>
 < ApiContext.Provider value={apiContext}>
   <Select />
 <Routes>
@@ -13,7 +16,7 @@ function App() {
 
 </Routes>
 </ApiContext.Provider>
-
+</>
 
   )
 }
