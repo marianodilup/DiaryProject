@@ -1,0 +1,9 @@
+.diary-post {
+    background-color: $background-color;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    font-family: $font-family;
+    @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+}

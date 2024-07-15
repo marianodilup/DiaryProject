@@ -1,19 +1,14 @@
-import { Routes } from "react-router-dom"
-import { ApiContext, useApiContext, } from "./Context/apiContext"
+import { Routes } from "react-router-dom";
+import { ApiContext, useApiContext } from "./Context/apiContext";
 
 function App() {
-  const apiContext = useApiContext()
+  const apiContext = useApiContext();
 
   return (
-< ApiContext.Provider value={apiContext}>
-<Routes>
-
-
-</Routes>
-</ApiContext.Provider>
-
-
-  )
+    <ApiContext.Provider value={apiContext}>
+      <Routes></Routes>
+    </ApiContext.Provider>
+  );
 }
 
-export default App
+export default App;
