@@ -1,4 +1,4 @@
-import "./scss/index.css";
+import "./Post.scss";
 
 function Post({ post }) {
   return (

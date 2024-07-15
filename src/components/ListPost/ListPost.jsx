@@ -1,5 +1,5 @@
-import Post from "./Post";
-import { ApiContext } from "./Context/apiContext";
+import Post from "../ListPost/Post";
+import { ApiContext } from "../Context/ApiContext";
 import { useContext } from "react";
 
 function ListPost() {

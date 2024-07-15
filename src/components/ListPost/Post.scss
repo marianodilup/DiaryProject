@@ -1,9 +1,11 @@
 .diary-post {
-    background-color: $background-color;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 600px;
-    font-family: $font-family;
-    @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-}
+    background-color: #f0f8ff; 
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 700px;
+    font-family: 'Georgia, serif';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cdcdcd;
+    color: #171717; 
+  }
