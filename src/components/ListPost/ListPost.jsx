@@ -1,5 +1,6 @@
 import Post from "./Post";
 import { ApiContext } from "./Context/apiContext";
+import { useContext } from "react";
 
 function ListPost() {
   const { postList } = useContext(ApiContext);
