@@ -11,7 +11,7 @@ export const useApiContext = () => {
         console.log(data);
         setPostList(data);
       });
-  }, []);
+  }, []); // va a ejecutar una sola vez, cuando cargue la página.
 
-  return { postList, addPost }; // aqui se ponen  las variables que quieres pasar a otros componentes.
+  return { postList }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
 };
