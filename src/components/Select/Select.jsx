@@ -6,7 +6,7 @@ import { SelectContext } from '../Context/SelectContext';
 function Select() {
 
 const { postList } = useContext(ApiContext);
-const { date, setDate, month, setMonth, year, setYear, selectedPostsByDate, setSelectedPostsByDate, selectedPostsByMonth, setSelectedPostsByMonth, selectedPostsByYear, setSelectedPostsByYear } = useContext(SelectContext);
+const { date, setDate, month, setMonth, year, setYear, setSelectedPostsByDate, setSelectedPostsByMonth, setSelectedPostsByYear } = useContext(SelectContext);
 
 
 const handleInputDate = (e) => {
