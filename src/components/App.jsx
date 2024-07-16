@@ -1,10 +1,12 @@
-import { Routes } from "react-router-dom"
-import { ApiContext, useApiContext, } from "./Context/ApiContext"
-import CreatePost from "./CreatePost/CreatePost"
-import Select from "./Select/Select"
+import { Route, Routes } from "react-router-dom";
+import { ApiContext, useApiContext } from "./Context/ApiContext";
+import CreatePost from "./CreatePost/CreatePost";
+import Select from "./Select/Select";
 import { SelectContext, useSelectContext } from "./Context/SelectContext";
-import 
-
+import ListPost from "./ListPost/ListPost";
+import Header from "./Header/Header";
+import Login from "./Login/Login";
+import NotFound from "./NotFound/NotFound";
 
 function App() {
   const apiContext = useApiContext();
@@ -12,20 +14,32 @@ function App() {
 
   return (
     <>
-    
-< ApiContext.Provider value={apiContext}>
-  <SelectContext.Provider value={selectContext}>
-<CreatePost/>
-  <Select />
-<Routes>
+      <Header />
+      <ApiContext.Provider value={apiContext}>
+        <SelectContext.Provider value={selectContext}>
+          
 
+          <Routes>
+            <Route
+              path="/ListPost"
+              element={
+                <main>
+                  {" "}
+                  <Select />
+                  <ListPost />{" "}
+                </main>
+              }
+            />
 
-</Routes>
-</SelectContext.Provider>
-</ApiContext.Provider>
-</>
-
-  )
+            <Route path="/" element= {<Login/>}/>
+            
+            <Route path="/CreatePost" element={<CreatePost/>}/>
+            <Route path="*" element={<NotFound/>}/>
+          </Routes>
+        </SelectContext.Provider>
+      </ApiContext.Provider>
+    </>
+  );
 }
 
 export default App;

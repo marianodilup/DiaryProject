@@ -103,7 +103,7 @@ const getFilteredPostsByYear = (year) => {
             <label htmlFor="year">Por año:</label>
             <input type="text" name="year" id="year" value={year} onChange={handleInputYear} />
         </fieldset>
-        <button></button>
+        
     </form>
     </>
   )
