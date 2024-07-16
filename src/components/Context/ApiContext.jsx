@@ -16,13 +16,8 @@ export const useApiContext = () => {
       });
   }, []); // se ejecuta una sola vez, cuandocarga la página.
 
-<<<<<<< HEAD
   
     
     
       return { postList }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
     };
-=======
-  return { postList }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
-};
->>>>>>> dev
