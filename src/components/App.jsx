@@ -17,19 +17,11 @@ function App() {
       <Header />
       <ApiContext.Provider value={apiContext}>
         <SelectContext.Provider value={selectContext}>
-          
-          
           <Routes>
-          <Route path="/" element= {<Login/>}/>
-            <Route
-              path="/ListPost"
-              element={<ListPost />}
-            />
-
-            
-            
-            <Route path="/CreatePost" element={<CreatePost/>}/>
-            <Route path="*" element={<NotFound/>}/>
+            <Route path="/" element={<Login />} />
+            <Route path="/ListPost" element={<ListPost />} />
+            <Route path="/CreatePost" element={<CreatePost />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </SelectContext.Provider>
       </ApiContext.Provider>

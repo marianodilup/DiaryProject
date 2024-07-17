@@ -1,34 +1,45 @@
-import React, { useState } from "react";
-import { userAPIjsx } from "../services/userapi.jsx";
-
-const INITIAL_STATE = {
-  username: "",
-  password: "",
-};
+//import React, { useState } from "react";
+//import { userAPIjsx } from "../services/userapi.jsx";
 
 function Login({ setUserData }) {
-  const [user, setUser] = useState(INITIAL_STATE);
+  const [user, setUser] = useState({ username: "", password: "" });
 
   const handleInput = (ev) => {
-    setUser({ ...user, [ev.target.id]: ev.target.value });
+    const { id, value } = ev.target;
+    setUser((prevUser) => ({
+      ...prevUser,
+      [id]: value,
+    }));
   };
 
-  const handleForm = (ev) => {
+  const handleForm = async (ev) => {
     ev.preventDefault();
-    console.log(user);
-    userAPIjsx(user).then((data) => {
+    try {
+      const data = await userAPIjsx(user);
       localStorage.setItem("user", JSON.stringify(data));
       setUserData(data);
-    });
+    } catch (error) {
+      console.error("Login failed", error);
+    }
   };
 
   return (
     <div>
-      <form onChange={handleInput} onSubmit={handleForm}>
+      <form onSubmit={handleForm}>
         <label htmlFor="username">Nombre de usuario</label>
-        <input type="text" name="username" id="username" />
+        <input
+          type="text"
+          id="username"
+          value={user.username}
+          onChange={handleInput}
+        />
         <label htmlFor="password">Contraseña</label>
-        <input type="password" name="password" id="password" />
+        <input
+          type="password"
+          id="password"
+          value={user.password}
+          onChange={handleInput}
+        />
         <button type="submit">Login</button>
       </form>
     </div>
