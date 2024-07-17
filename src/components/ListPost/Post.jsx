@@ -5,7 +5,7 @@ import { deletePost } from "../Services/ApiCrud";
 
 
 function Post({ post }) {
-  const getPost = useContext(ApiContext);
+  const {getPost} = useContext(ApiContext);
 
   const handleClick = (ev)=>{
     const id = ev.target.id;

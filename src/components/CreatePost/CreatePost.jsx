@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { ApiContext } from "../Context/ApiContext";
+import { useContext } from "react";
 import { addPost } from "../Services/ApiCrud";
 
 function CreatePost() {
+  const {getPost} = useContext(ApiContext);
   const [post, setPost] = useState({
     title: "",
     post: "",
@@ -20,8 +23,8 @@ function CreatePost() {
   
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    addPost(post);
-    console.log(post);
+    addPost(post, getPost);
+
     
     setPost({ 
       title: "",

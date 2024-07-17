@@ -5,28 +5,16 @@ export const ApiContext = createContext();
 export const useApiContext = () => {
   const [postList, setPostList] = useState([]); // Inicializar como array
 
-  useEffect(() => {
+  const getPost = () => {
     fetch("https://669156aa26c2a69f6e8f6d81.mockapi.io/diary")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setPostList(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
       });
+  };
+  useEffect(() => {
+    getPost();
   }, []); // se ejecuta una sola vez, cuando carga la página.
 
-  const getPost = ()=>{
-
-fetch("https://669156aa26c2a69f6e8f6d81.mockapi.io/diary")
-      .then((response) => response.json())
-      .then((data) => {
-
-        setPostList(data);
-      })
-  }
-    
-    
-      return { postList, getPost }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
-    };
+  return { postList, getPost }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
+};
