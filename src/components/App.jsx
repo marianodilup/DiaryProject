@@ -7,6 +7,7 @@ import ListPost from "./ListPost/ListPost";
 import Header from "./Header/Header";
 import Login from "./Login/Login";
 import NotFound from "./NotFound/NotFound";
+import AuthRoute from "./AuthRoute/AuthRoute";
 
 function App() {
   const apiContext = useApiContext();
@@ -21,9 +22,16 @@ function App() {
           <Route path="/" element= {<Login/>}/>
             <Route
               path="/ListPost"
-              element={<ListPost />}
-            />
-            <Route path="/CreatePost" element={<CreatePost/>}/>
+              element={
+              <AuthRoute 
+              user={userData}
+              component={<ListPost />}/>}/>
+            <Route 
+            path="/CreatePost" 
+            element={
+            <AuthRoute
+            user={userData}
+            component={<CreatePost />}/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
         </SelectContext.Provider>
