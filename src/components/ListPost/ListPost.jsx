@@ -8,8 +8,8 @@ function ListPost() {
   const { postList } = useContext(ApiContext);
   const { date, month, year } = useContext(SelectContext);
 
-  const filteredPosts = 
-    postList.filter((post) => {
+  const filteredPosts = postList
+    .filter((post) => {
       if (date) {
         return post.date === date;
       } else {
@@ -33,12 +33,12 @@ function ListPost() {
 
   return (
     <>
-    <Select />
-    <section>
-    {filteredPosts.map((post) => (
-        <Post key={post.id} post={post} />
-      ))} 
-    </section>
+      <Select />
+      <section>
+        {filteredPosts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </section>
     </>
   );
 }
