@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-//import { userAPIjsx } from "../services/userapi.jsx";
 import "./Login.scss";
+import { getDataFromApiUser } from "../Services/UserApi";
 
 function Login({ setUserData }) {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -16,7 +16,7 @@ function Login({ setUserData }) {
   const handleForm = async (ev) => {
     ev.preventDefault();
     try {
-      const data = await userAPIjsx(user);
+      const data = await getDataFromApiUser(user);
       localStorage.setItem("user", JSON.stringify(data));
       setUserData(data);
     } catch (error) {
