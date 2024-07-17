@@ -5,73 +5,21 @@ import { SelectContext } from '../Context/SelectContext';
 
 function Select() {
 
-const { postList } = useContext(ApiContext);
-const { date, setDate, month, setMonth, year, setYear, setSelectedPostsByDate, setSelectedPostsByMonth, setSelectedPostsByYear } = useContext(SelectContext);
+const { date, setDate, month, setMonth, year, setYear } = useContext(SelectContext);
 
 
 const handleInputDate = (e) => {
     setDate(e.target.value);
-    getFilteredPostsByDate(date);
-    // console.log(selectedPostsByDate);
-    // console.log(date);
-    // console.log(postList);
 };
 
 const handleSelectMonth = (e) => {
     setMonth(e.target.value);
-    getFilteredPostsByMonth(year);
 };
 
-const handleInputYear = (e) => {
+const handleSelectYear = (e) => {
     setYear(e.target.value);
-    getFilteredPostsByYear(year)
 };
 
-const getFilteredPostsByDate = (date) => {
-    /* console.log(date);
-    console.log(postList[0].date); */ 
-    const filteredPostsByDate = postList.filter((post) => {
-        return post.date === date;
-    })   
-    setSelectedPostsByDate(filteredPostsByDate);
-    /* console.log(filteredPostsByDate); */
-    }; 
-
-useEffect(() => {
-    if (date) {
-        getFilteredPostsByDate(date);
-    }
-    }, [date]);
-
-/* const getFilteredPostsByDate = (date) => {
-     console.log(date);
-    console.log(postList[0].date); 
-
-    const targetDate = new Date(date);
-
-    const filteredPostsByDates = postList.filter((post) => {
-        const postDate = new Date(post.date);
-        // Comparar solo la fecha, sin considerar la hora
-        return postDate.toDateString() == targetDate.toDateString();
-    });
-    // console.log(filteredPostsByDates);
-    setFilteredPostsByDate(filteredPostsByDates);
-    console.log(filteredPostsByDate);
-}; */
-
-const getFilteredPostsByMonth = (month) => {
-    const filteredPostsByMonth = postList.filter((post) => {
-        return post.date.includes(month);
-    })
-    setSelectedPostsByMonth(filteredPostsByMonth);
-};
-
-const getFilteredPostsByYear = (year) => {
-    const filteredPostsByYear = postList.filter((post) => {
-        return post.date.includes(year);
-    })
-    setSelectedPostsByYear(filteredPostsByYear);
-};
 
   return (
     <>
@@ -84,7 +32,7 @@ const getFilteredPostsByYear = (year) => {
         <fieldset>
             <label htmlFor="month">Por mes:</label>
             <select name="month" id="month" value={month} onChange={handleSelectMonth}>
-                <option value="">Selecciona un mes</option>
+                <option value="">Todos los meses</option>
                 <option value="-01-">Enero</option>
                 <option value="-02-">Febrero</option>
                 <option value="-03-">Marzo</option>
@@ -101,7 +49,11 @@ const getFilteredPostsByYear = (year) => {
         </fieldset>
         <fieldset>
             <label htmlFor="year">Por año:</label>
-            <input type="text" name="year" id="year" value={year} onChange={handleInputYear} />
+            <select name="year" id="year" value={year} onChange={handleSelectYear}>
+                <option value="">Todos los años</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select> 
         </fieldset>
         <button></button>
     </form>
