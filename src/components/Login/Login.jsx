@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 //import { userAPIjsx } from "../services/userapi.jsx";
+import "./Login.scss";
 
 function Login({ setUserData }) {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -24,7 +25,7 @@ function Login({ setUserData }) {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <form onSubmit={handleForm}>
         <label htmlFor="username">Nombre de usuario</label>
         <input

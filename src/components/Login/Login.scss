@@ -1,0 +1,71 @@
+// variables
+$font-stack: 'Helvetica Neue', sans-serif;
+$primary-color: antiquewhite;
+$secondary-color: black;
+$border-radius: 5px;
+$input-padding: 10px;
+$button-padding: 10px 20px;
+$box-shadow: 0 4px 6px rgba(157, 149, 149, 0.1);
+$transition: all 0.3s ease;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ead1a6;
+  font-family: 'Georgia, serif';
+}
+
+.login-container {
+  background: antiquewhite;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  width: 300px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-size: 14px;
+  color: $secondary-color;
+}
+
+input {
+  padding: $input-padding;
+  margin-top: 5px;
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius;
+  font-size: 14px;
+  transition: $transition;
+  background-color: antiquewhite;
+  color: black;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+    box-shadow: 0 0 5px rgba($primary-color, 0.5);
+  }
+}
+
+button {
+  margin-top: 20px;
+  padding: $button-padding;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 16px;
+  transition: $transition;
+
+  &:hover {
+    background-color: darken($primary-color, 32%);
+  }
+}
