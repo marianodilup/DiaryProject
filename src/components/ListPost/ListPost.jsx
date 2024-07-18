@@ -4,9 +4,12 @@ import { useContext } from "react";
 import { SelectContext } from "../Context/SelectContext";
 import Select from "../Select/Select";
 
-function ListPost() {
+
+function ListPost({ }) {
   const { postList } = useContext(ApiContext);
   const { date, month, year } = useContext(SelectContext);
+
+
 
   const filteredPosts = postList
     .filter((post) => {

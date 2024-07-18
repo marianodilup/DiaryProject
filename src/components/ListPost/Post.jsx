@@ -16,11 +16,11 @@ function Post({ post }) {
 
   return (
     <article className="diary-post">
-      <button onClick={handleClick} id={post.id}>Eliminar</button>
+      <button className="button-post" onClick={handleClick} id={post.id}>Eliminar</button>
       <h3>{post.title}</h3>
       <h4>{post.post}</h4>
       <h4>{post.date}</h4>
-      <img src={post.img} alt="" width={300} height={300} />
+      <img className="img-post" src={post.img} alt="" width={300} height={300} />
     </article>
   );
 }
