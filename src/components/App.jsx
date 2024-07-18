@@ -19,12 +19,7 @@ function App() {
       <ApiContext.Provider value={apiContext}>
         <SelectContext.Provider value={selectContext}>
           <Routes>
-<<<<<<< HEAD
-            <Route path="/" element={<Login />} />
-            <Route path="/ListPost" element={<ListPost />} />
-            <Route path="/CreatePost" element={<CreatePost />} />
-            <Route path="*" element={<NotFound />} />
-=======
+
           <Route path="/" element= {<Login/>}/>
             <Route
               path="/ListPost"
@@ -39,7 +34,6 @@ function App() {
             user={userData}
             component={<CreatePost />}/>}/>
             <Route path="*" element={<NotFound/>}/>
->>>>>>> authroute-component
           </Routes>
         </SelectContext.Provider>
       </ApiContext.Provider>
