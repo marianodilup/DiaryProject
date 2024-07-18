@@ -29,7 +29,7 @@ function App() {
               element={
                 <AuthRoute
                   user={userData}
-                  component={<ListPost setUserData={setUserData} />}
+                  component={<ListPost/>}
                 />
               }
             />
@@ -38,7 +38,7 @@ function App() {
               element={
                 <AuthRoute
                   user={userData}
-                  component={<CreatePost setUserData={setUserData} />}
+                  component={<CreatePost/>}
                 />
               }
             />

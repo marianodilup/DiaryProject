@@ -1,20 +1,15 @@
 import Post from "../ListPost/Post";
 import { ApiContext } from "../Context/ApiContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { SelectContext } from "../Context/SelectContext";
 import Select from "../Select/Select";
-import { getDataUserForAuth } from "../Services/UserApi";
 
-function ListPost({ setUserData, userData }) {
+
+function ListPost({ }) {
   const { postList } = useContext(ApiContext);
   const { date, month, year } = useContext(SelectContext);
 
-  useEffect(() => {
-    getDataUserForAuth(userData.token).then((info) => {
-      console.log(info);
-      setUserData(info);
-    });
-  }, []);
+
 
   const filteredPosts = postList
     .filter((post) => {

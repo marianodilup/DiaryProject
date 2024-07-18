@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { ApiContext } from "../Context/ApiContext";
 import { useContext } from "react";
 import { addPost } from "../Services/ApiCrud";
-import { getDataUserForAuth } from "../Services/UserApi";
 
-function CreatePost({ setUserData, userData }) {
+
+function CreatePost({}) {
   const { getPost } = useContext(ApiContext);
   const [post, setPost] = useState({
     title: "",
@@ -13,12 +13,6 @@ function CreatePost({ setUserData, userData }) {
     img: "",
   });
 
-  useEffect(() => {
-    getDataUserForAuth(userData.token).then((info) => {
-      console.log(info);
-      setUserData(info);
-    });
-  }, []);
 
   const handleInput = (ev) => {
     ev.preventDefault();
