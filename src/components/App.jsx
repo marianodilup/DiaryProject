@@ -15,7 +15,7 @@ function App() {
 
   const dataLocal = JSON.parse(localStorage.getItem("user"));
   const [userData, setUserData] = useState(dataLocal);
-  //const [data, setData] = useState("null");
+  const [authData, setAuthData] = useState("null");
 
   return (
     <>
@@ -29,7 +29,7 @@ function App() {
               element={
                 <AuthRoute
                   user={userData}
-                  component={<ListPost/>}
+                  component={<ListPost userData={userData} setAuthData={setAuthData}/>}
                 />
               }
             />
@@ -38,7 +38,7 @@ function App() {
               element={
                 <AuthRoute
                   user={userData}
-                  component={<CreatePost/>}
+                  component={<CreatePost userData={userData} setAuthData={setAuthData}/>}
                 />
               }
             />
