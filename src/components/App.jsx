@@ -13,7 +13,6 @@ import Register from "./Register/Register";
 import EditPost from "./EditPost/EditPost";
 import Detail from "./Detail/Detail";
 
-
 function App() {
   const apiContext = useApiContext();
   const selectContext = useSelectContext();
@@ -52,16 +51,18 @@ function App() {
                 />
               }
             />
-             <Route
+            <Route
               path="/EditPost"
               element={
                 <AuthRoute
                   user={userData}
-                  component={<EditPost userData={userData} setAuthData={setAuthData}/>}
+                  component={
+                    <EditPost userData={userData} setAuthData={setAuthData} />
+                  }
                 />
               }
             />
-            <Route path="/Detail/:idPost" element={<Detail/>}/>
+            <Route path="/Detail/:idPost" element={<Detail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </SelectContext.Provider>
