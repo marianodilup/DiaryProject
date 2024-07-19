@@ -86,7 +86,7 @@ function EditPost({userData, setAuthData }) {
       <label htmlFor="img">imágen: </label>
       <input value={post.img} type="text" id="img" alt="" onChange={handleInput} />
       </fieldset>
-      <button type="submit">Añadir</button>
+      <button type="submit">Actualizar</button>
     </form>
   )
 }
