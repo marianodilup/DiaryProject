@@ -1,13 +1,9 @@
 import "./Post.scss";
 import { ApiContext } from "../Context/ApiContext";
 import { useContext } from "react";
-<<<<<<< HEAD
 import { deletePost, editPost } from "../Services/ApiCrud";
 import { useNavigate } from "react-router-dom";
-=======
-import { deletePost } from "../Services/ApiCrud";
 import { Link } from "react-router-dom";
->>>>>>> detail
 
 
 function Post({ post }) {
@@ -30,13 +26,9 @@ function Post({ post }) {
 
   return (
     <article className="diary-post">
-<<<<<<< HEAD
       <button className="button-post" onClick={handleDelete} id={post.id}>Eliminar</button>
       <button className="button-post" onClick={handleEdit} id={post.id}>Editar</button>
-=======
-      <button className="button-post" onClick={handleClick} id={post.id}>Eliminar</button>
       <Link className="link-post" to={`/detail/${post.id}`}>
->>>>>>> detail
       <h3>{post.title}</h3>
       <h4>{post.post}</h4>
       <h4>{post.date}</h4>

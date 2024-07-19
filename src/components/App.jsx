@@ -8,15 +8,11 @@ import Login from "./Login/Login";
 import NotFound from "./NotFound/NotFound";
 import AuthRoute from "./AuthRoute/AuthRoute";
 import { useState } from "react";
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import Register from "./Register/Register";
-=======
 import EditPost from "./EditPost/EditPost";
->>>>>>> edit-post
-=======
 import Detail from "./Detail/Detail";
->>>>>>> detail
+
 
 function App() {
   const apiContext = useApiContext();
