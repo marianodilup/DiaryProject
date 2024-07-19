@@ -20,7 +20,7 @@ function App() {
 
   const dataLocal = JSON.parse(localStorage.getItem("user"));
   const [userData, setUserData] = useState(dataLocal);
-  const [authData, setAuthData] = useState("null");
+  const [authData, setAuthData] = useState(null);
 
   return (
     <>
@@ -28,7 +28,7 @@ function App() {
       <ApiContext.Provider value={apiContext}>
         <SelectContext.Provider value={selectContext}>
           <Routes>
-            <Route path="/" element={<Login setUserData={setUserData} />} />
+            <Route path="/" element={<Login setUserData={setUserData} userData={userData} />} />
             <Route path="/register" element={<Register />} />
             <Route
               path="/ListPost"
@@ -36,7 +36,7 @@ function App() {
                 <AuthRoute
                   user={userData}
                   component={
-                    <ListPost userData={userData} setAuthData={setAuthData} />
+                    <ListPost userData={userData} setAuthData={setAuthData} authData={authData}/>
                   }
                 />
               }

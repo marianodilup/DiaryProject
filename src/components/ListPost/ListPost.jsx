@@ -6,15 +6,18 @@ import Select from "../Select/Select";
 import { getDataUserForAuth } from "../Services/UserApi";
 
 
-function ListPost({ userData, setAuthData }) {
+function ListPost({ userData, setAuthData, authData }) {
   const { postList } = useContext(ApiContext);
   const { date, month, year } = useContext(SelectContext);
 
   useEffect(() => {
-    getDataUserForAuth(userData.token).then((info) => {
-      console.log(info);
-      setAuthData(info);
-    })
+    if(authData){
+      getDataUserForAuth(userData.token).then((info) => {
+        console.log(info);
+        setAuthData(info);
+      })
+    }
+   
   }, []);
 
   const filteredPosts = postList
