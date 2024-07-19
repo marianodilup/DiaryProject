@@ -3,8 +3,8 @@ import "./Login.scss";
 import { getDataFromApiUser } from "../Services/UserApi";
 import { useNavigate } from "react-router-dom";
 
-function Login({ setUserData }) {
-  const [user, setUser] = useState({ username: "", password: "" });
+function Login({ setUserData, userData }) {
+  const [user, setUser] = useState({ email: "", password: "" });
 
   const navigate = useNavigate();
 
@@ -22,7 +22,10 @@ function Login({ setUserData }) {
       const data = await getDataFromApiUser(user);
       localStorage.setItem("user", JSON.stringify(data));
       setUserData(data);
-      navigate("/ListPost");
+      if(userData.email === user.email && userData.password === user.password){ 
+return navigate("/ListPost");
+      }
+      
     } catch (error) {
       console.error("Login failed", error);
     }
