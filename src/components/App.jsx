@@ -8,6 +8,7 @@ import Login from "./Login/Login";
 import NotFound from "./NotFound/NotFound";
 import AuthRoute from "./AuthRoute/AuthRoute";
 import { useState } from "react";
+import EditPost from "./EditPost/EditPost";
 
 function App() {
   const apiContext = useApiContext();
@@ -39,6 +40,15 @@ function App() {
                 <AuthRoute
                   user={userData}
                   component={<CreatePost userData={userData} setAuthData={setAuthData}/>}
+                />
+              }
+            />
+             <Route
+              path="/EditPost"
+              element={
+                <AuthRoute
+                  user={userData}
+                  component={<EditPost userData={userData} setAuthData={setAuthData}/>}
                 />
               }
             />
