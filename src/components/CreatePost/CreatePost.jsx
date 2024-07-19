@@ -63,7 +63,7 @@ function CreatePost({ userData, setAuthData }) {
 
         <label htmlFor="img">imágen: </label>
         <input type="text" id="img" alt="" onChange={handleInput} />
-        <button type="submit">Añadir</button>
+        <button type="submit">Editar</button>
       </form>
     </fieldset>
   );
