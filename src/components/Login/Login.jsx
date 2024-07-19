@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import { getDataFromApiUser } from "../Services/UserApi";
+import { useNavigate } from "react-router-dom";
 
 function Login({ setUserData }) {
   const [user, setUser] = useState({ username: "", password: "" });
+
+  const navigate = useNavigate();
 
   const handleInput = (ev) => {
     const { id, value } = ev.target;
@@ -19,6 +22,7 @@ function Login({ setUserData }) {
       const data = await getDataFromApiUser(user);
       localStorage.setItem("user", JSON.stringify(data));
       setUserData(data);
+      navigate("/ListPost");
     } catch (error) {
       console.error("Login failed", error);
     }
