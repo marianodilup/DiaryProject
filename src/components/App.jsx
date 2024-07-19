@@ -8,6 +8,7 @@ import Login from "./Login/Login";
 import NotFound from "./NotFound/NotFound";
 import AuthRoute from "./AuthRoute/AuthRoute";
 import { useState } from "react";
+import Detail from "./Detail/Detail";
 
 function App() {
   const apiContext = useApiContext();
@@ -42,6 +43,7 @@ function App() {
                 />
               }
             />
+            <Route path="/Detail/:idPost" element={<Detail/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </SelectContext.Provider>
