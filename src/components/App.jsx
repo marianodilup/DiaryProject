@@ -8,6 +8,7 @@ import Login from "./Login/Login";
 import NotFound from "./NotFound/NotFound";
 import AuthRoute from "./AuthRoute/AuthRoute";
 import { useState } from "react";
+import Register from "./Register/Register";
 
 function App() {
   const apiContext = useApiContext();
@@ -24,12 +25,15 @@ function App() {
         <SelectContext.Provider value={selectContext}>
           <Routes>
             <Route path="/" element={<Login setUserData={setUserData} />} />
+            <Route path="/register" element={<Register />} />
             <Route
               path="/ListPost"
               element={
                 <AuthRoute
                   user={userData}
-                  component={<ListPost userData={userData} setAuthData={setAuthData}/>}
+                  component={
+                    <ListPost userData={userData} setAuthData={setAuthData} />
+                  }
                 />
               }
             />
@@ -38,7 +42,9 @@ function App() {
               element={
                 <AuthRoute
                   user={userData}
-                  component={<CreatePost userData={userData} setAuthData={setAuthData}/>}
+                  component={
+                    <CreatePost userData={userData} setAuthData={setAuthData} />
+                  }
                 />
               }
             />
