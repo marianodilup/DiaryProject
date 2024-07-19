@@ -8,11 +8,8 @@ import Login from "./Login/Login";
 import NotFound from "./NotFound/NotFound";
 import AuthRoute from "./AuthRoute/AuthRoute";
 import { useState } from "react";
-<<<<<<< HEAD
 import Register from "./Register/Register";
-=======
 import EditPost from "./EditPost/EditPost";
->>>>>>> edit-post
 
 function App() {
   const apiContext = useApiContext();
