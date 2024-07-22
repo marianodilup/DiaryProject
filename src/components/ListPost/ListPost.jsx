@@ -4,18 +4,18 @@ import { useContext, useEffect } from "react";
 import { SelectContext } from "../Context/SelectContext";
 import Select from "../Select/Select";
 import { getDataUserForAuth } from "../Services/UserApi";
-
+import Header from "../Header/Header";
 
 function ListPost({ userData, setAuthData, authData }) {
   const { postList } = useContext(ApiContext);
   const { date, month, year } = useContext(SelectContext);
 
   useEffect(() => {
-    if(authData){
+    if (authData) {
       getDataUserForAuth(userData.token).then((info) => {
         setAuthData(info);
-      })
-    }  
+      });
+    }
   }, []);
 
   const filteredPosts = postList
@@ -43,6 +43,7 @@ function ListPost({ userData, setAuthData, authData }) {
 
   return (
     <>
+      <Header />
       <Select />
       <section>
         {filteredPosts.map((post) => (

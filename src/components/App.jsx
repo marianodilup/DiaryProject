@@ -22,11 +22,13 @@ function App() {
 
   return (
     <>
-      <Header />
       <ApiContext.Provider value={apiContext}>
         <SelectContext.Provider value={selectContext}>
           <Routes>
-            <Route path="/" element={<Login setUserData={setUserData} userData={userData} />} />
+            <Route
+              path="/"
+              element={<Login setUserData={setUserData} userData={userData} />}
+            />
             <Route path="/register" element={<Register />} />
             <Route
               path="/ListPost"
@@ -34,7 +36,11 @@ function App() {
                 <AuthRoute
                   user={userData}
                   component={
-                    <ListPost userData={userData} setAuthData={setAuthData} authData={authData}/>
+                    <ListPost
+                      userData={userData}
+                      setAuthData={setAuthData}
+                      authData={authData}
+                    />
                   }
                 />
               }
