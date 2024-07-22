@@ -14,9 +14,8 @@ function CreatePost({ userData, setAuthData }) {
     img: "",
   });
 
-  useEffect(() => {
+   useEffect(() => {
     getDataUserForAuth(userData.token).then((info) => {
-      console.log(info);
       setAuthData(info);
     })
   }, []);

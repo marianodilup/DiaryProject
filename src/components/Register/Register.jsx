@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { registerUser } from "../Services/UserApi";
+import "./Register.scss"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +8,9 @@ const Register = () => {
     email: "",
     password: "",
   });
+
+  const [registerCompleted, setRegisterCompleted] = useState("");
+  
 
   const handleChange = (e) => {
     setFormData({
@@ -16,8 +21,18 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí se agregaría la lógica para enviar los datos del formulario al servidor (Quedamos en verlo ahora)
-    console.log(formData);
+    registerUser(formData).then((data) => {
+      console.log(data);
+      
+      if (data.data.name && data.data.email && data.data.password) {
+        setRegisterCompleted("¡Te has registrado correctamente!");
+        setFormData({
+          name: "",
+          email: "",
+          password: "",
+        })
+      } 
+    })
   };
 
   return (
@@ -54,6 +69,7 @@ const Register = () => {
             onChange={handleChange}
           />
         </div>
+        <p className={registerCompleted ? "success-message" : "no-success"}>{registerCompleted}</p>
         <button type="submit">Register</button>
       </form>
     </div>

@@ -13,11 +13,9 @@ function ListPost({ userData, setAuthData, authData }) {
   useEffect(() => {
     if(authData){
       getDataUserForAuth(userData.token).then((info) => {
-        console.log(info);
         setAuthData(info);
       })
-    }
-   
+    }  
   }, []);
 
   const filteredPosts = postList

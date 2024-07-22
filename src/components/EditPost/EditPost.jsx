@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ApiContext } from "../Context/ApiContext";
 import { useContext } from "react";
-import { getDataUserForAuth } from "../Services/UserApi";
+import { getDataUserForAuth } from "../Services/UserApi"; 
 import { getPostById } from "../Services/ApiCrud";
 import { editPost } from "../Services/ApiCrud";
 import { useNavigate } from "react-router-dom";
@@ -17,13 +17,12 @@ function EditPost({userData, setAuthData }) {
     });
     const navigate = useNavigate();
   
-    useEffect(() => {
+     useEffect(() => {
       getDataUserForAuth(userData.token).then((info) => {
-        console.log(info);
         setAuthData(info);
       })
       console.log(post);
-    }, [post]);
+    }, [post]); 
 
     const getEditPost = async () => {
         if (editId) {

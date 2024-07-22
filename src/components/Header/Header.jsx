@@ -8,6 +8,7 @@ function Header() {
      <Link to="/"> Login </Link>
      <Link to="/ListPost"> Mi diario</Link>
      <Link to="/CreatePost"> Crear nueva entrada</Link>
+     <Link to="/register"> Registro</Link>
     </nav>
    </header>
   )

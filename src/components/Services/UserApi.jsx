@@ -18,7 +18,7 @@ const getDataUserForAuth = (token) => {
       Authorization: "Bearer" + token,
     },
   }).then((res) => res.json());
-};
+}; 
 
 const registerUser = (user) => {
   return fetch(" https://proyecto-node-vercel.onrender.com/user/register", {
@@ -27,7 +27,7 @@ const registerUser = (user) => {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  }).then((res) => res.json());
 };
 
 export { getDataFromApiUser, getDataUserForAuth, registerUser };
