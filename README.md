@@ -74,17 +74,11 @@ Para el diseño de la interfaz de usuario, utilizamos Figma, una herramienta col
 ## Proceso de Desarrollo
 1. **Configuración Inicial del Proyecto**
    - Inicializamos el proyecto con `npm init` y configuramos Vite para el entorno de desarrollo.
-2. **Implementación del Diseño de UI**
-   - Creamos la rama `feature/ui-design` y comenzamos a implementar los diseños de Figma.
-   - Estilos y componentes fueron añadidos progresivamente para mantener coherencia con los prototipos.
+2. **Implementación de componentes**
+   - Estilos y componentes fueron añadidos progresivamente para mantener coherencia con el desarrollo.
 3. **Desarrollo de Funcionalidades**
    - En la rama `feature/api-integration`, integramos la API para manejar las entradas del diario.
    - Utilizamos `Context API` para manejar el estado global de la aplicación.
-4. **Pruebas y Corrección de Errores**
-   - Se crearon ramas específicas como `bugfix/header-issue` para solucionar problemas identificados durante el desarrollo.
-5. **Integración y Despliegue**
-   - Después de pruebas exhaustivas, se fusionaron las ramas `feature/ui-design` y `feature/api-integration` con `develop`.
-   - Finalmente, se fusionó `develop` con `main` y se desplegó la versión estable del proyecto.
 
 ## Conclusión
 Desarrollamos "DiaryProject"con una estructura clara y organizada, utilizando Figma para el diseño y Git para el control de versiones. Este enfoque permitió una colaboración efectiva y una implementación fluida de funcionalidades entre los 3 miembros del equipo.
