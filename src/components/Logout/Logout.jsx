@@ -22,7 +22,7 @@ function Logout({userData, setUserData, authData, setAuthData}) {
     };
   
     const handleClickNo = () => {
-      navigate("/menuslist")
+      navigate("/ListPost")
     };
   
     return (
