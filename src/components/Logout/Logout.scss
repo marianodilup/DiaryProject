@@ -1,0 +1,65 @@
+$font-stack: 'Helvetica Neue', sans-serif;
+$primary-color: #6e208f; 
+$secondary-color: #edeff1; 
+$error-color: #e74c3c; 
+$border-radius: 20px; 
+$input-padding: 10px;
+$button-padding: 10px 20px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+$transition: all 0.3s ease;
+
+.logout-container {
+  background: $primary-color;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 130px;
+}
+
+.logout-title {
+  font-size: 24px;
+  color: $secondary-color;
+}
+
+.logout-msg {
+  margin-top: 15px;
+  font-size: 16px;
+  color: $secondary-color;
+}
+
+.logout-options {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  li {
+    display: inline;
+  }
+}
+
+.logout-btn {
+  padding: $button-padding;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 16px;
+  transition: $transition;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 15%);
+    transform: translateY(0);
+  }
+}
