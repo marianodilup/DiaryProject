@@ -11,6 +11,7 @@ import { useState } from "react";
 import Register from "./Register/Register";
 import EditPost from "./EditPost/EditPost";
 import Detail from "./Detail/Detail";
+import Logout from "./Logout/Logout";
 
 function App() {
   const apiContext = useApiContext();
@@ -29,7 +30,23 @@ function App() {
               path="/"
               element={<Login setUserData={setUserData} userData={userData} />}
             />
-            <Route path="/register" element={<Register />} />
+            <Route 
+            path="/register" 
+            element={<Register />} />
+            <Route 
+            path="/logout"
+            element={
+            <AuthRoute
+              user={userData}
+              component={
+                <Logout 
+                  userData={userData}
+                  setUserData={setUserData}
+                  authData={authData}
+                  setAuthData={setAuthData}
+                />
+              } 
+            /> } />
             <Route
               path="/ListPost"
               element={

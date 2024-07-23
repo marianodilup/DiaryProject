@@ -7,6 +7,7 @@ function Header() {
       <nav>
         <Link to="/ListPost"> Mi diario</Link>
         <Link to="/CreatePost"> Crear nueva entrada</Link>
+        <Link to="/logout"> Cerrar sesión</Link>
       </nav>
     </header>
   );
