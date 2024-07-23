@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./Logout.scss";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import { getDataUserForAuth } from "../Services/UserApi";
@@ -28,8 +29,8 @@ function Logout({ userData, setUserData, authData, setAuthData }) {
   return (
     <>
       <Header />
-      <h2 className="logout-title">Cerrar sesión</h2>
-      <div>
+      <div className="logout-container">
+        <h2 className="logout-title">Cerrar sesión</h2>
         <p className="logout-msg">
           ¿Estás seguro de que quieres cerrar sesión?
         </p>
