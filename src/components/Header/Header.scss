@@ -1,0 +1,93 @@
+$primary-color: #6e208f;
+$text-color: #2c3e50;
+$header-bg-color: #ffffff;
+$highlight-color: #ff4081;
+$header-padding: 20px;
+$header-font-size: 18px;
+
+header {
+  background-color: $header-bg-color;
+  padding: $header-padding;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .logo {
+      width: 70px ;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      align-items: center;  // Asegura que los elementos del menú estén centrados verticalmente
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-size: $header-font-size;
+        transition: color 0.3s, border-bottom 0.3s;
+
+        &:hover {
+          color: $highlight-color;
+          border-bottom: 2px solid $highlight-color;
+        }
+      }
+    }
+
+    .hamburguer {
+      display: none; // Oculto por defecto en pantallas grandes
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      svg {
+        fill: $primary-color;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    nav {
+      justify-content: space-between; // Asegura que el logo esté a la izquierda y el menú hamburguesa a la derecha
+      align-items: center;
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: $header-bg-color;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 10px 10px;
+
+        &.active {
+          display: flex;
+        }
+      }
+
+      .hamburguer {
+        display: block; // Mostrar en dispositivos móviles
+      }
+    }
+  }
+}
