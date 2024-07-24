@@ -25,15 +25,9 @@ function Post({ post }) {
 
   return (
     <article className="diary-post">
-      <button className="button-post" onClick={handleDelete} id={post.id}>
-        Eliminar
-      </button>
-      <button className="button-post" onClick={handleEdit} id={post.id}>
-        Editar
-      </button>
       <Link className="link-post" to={`/detail/${post.id}`}>
-        <h3>{post.title}</h3>
         <h4>{post.date}</h4>
+        <h3>{post.title}</h3>
         <img
           className="img-post"
           src={post.img}
@@ -42,6 +36,14 @@ function Post({ post }) {
           height={300}
         />
       </Link>
+      <div className="btns-container">
+        <button className="button-post" onClick={handleEdit} id={post.id}>
+          Editar
+        </button>
+        <button className="button-post" onClick={handleDelete} id={post.id}>
+          Eliminar
+        </button>
+      </div>
     </article>
   );
 }
