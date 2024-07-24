@@ -5,8 +5,6 @@
     
 }; 
 
-
-
 $primary-color: #6e208f;
 $text-color: #2c3e50;
 $header-bg-color: #ffffff;
@@ -14,22 +12,20 @@ $highlight-color: #ff4081;
 $header-padding: 20px;
 $header-font-size: 18px;
 
-.header-container {
+header {
   background-color: $header-bg-color;
   padding: $header-padding;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
- .nav-container {
-    max-width: 1200px; 
-   margin: 0 auto;  
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
 
     .logo {
-      width: 70px ;
+      max-width: 60px;
       height: auto;
       flex-shrink: 0;
     }
@@ -37,15 +33,19 @@ $header-font-size: 18px;
     .menu {
       display: flex;
       gap: 20px;
-      align-items: center;  
+      align-items: center;  // Asegura que los elementos del menú estén centrados verticalmente
 
-    
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-size: $header-font-size;
+        transition: color 0.3s, border-bottom 0.3s;
 
         &:hover {
           color: $highlight-color;
           border-bottom: 2px solid $highlight-color;
         }
-      
+      }
     }
 
     .hamburguer {
@@ -71,7 +71,7 @@ $header-font-size: 18px;
 @media (max-width: 768px) {
   header {
     nav {
-      justify-content: space-between; 
+      justify-content: space-between;
       align-items: center;
 
       .menu {
@@ -81,10 +81,10 @@ $header-font-size: 18px;
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: $header-bg-color;
+       background-color: $header-bg-color; 
         width: 100%;
         padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
         border-radius: 0 0 10px 10px;
 
         &.active {

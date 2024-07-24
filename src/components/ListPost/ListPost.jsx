@@ -5,6 +5,7 @@ import { SelectContext } from "../Context/SelectContext";
 import Select from "../Select/Select";
 import { getDataUserForAuth } from "../Services/UserApi";
 import Header from "../Header/Header";
+import "./ListPost.scss"
 
 function ListPost({ userData, setAuthData, authData }) {
   const { postList } = useContext(ApiContext);
@@ -45,7 +46,7 @@ function ListPost({ userData, setAuthData, authData }) {
     <>
       <Header />
       <Select />
-      <section>
+      <section className="section-listpost">
         {filteredPosts.map((post) => (
           <Post key={post.id} post={post} />
         ))}

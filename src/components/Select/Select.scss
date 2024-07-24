@@ -63,7 +63,7 @@ $form-padding: 20px;
   }
 }
 
-// Responsivo para tablets (pantallas medianas)
+
 @media (max-width: 768px) {
   .select-container {
     max-width: 90%;
@@ -71,12 +71,12 @@ $form-padding: 20px;
   }
 
   form {
-    flex-direction: column; // Cambia a columna en pantallas medianas
+    flex-direction: column; 
     gap: 15px;
   }
 }
 
-// Responsivo para móviles (pantallas pequeñas)
+
 @media (max-width: 480px) {
   .select-container {
     max-width: 95%;
@@ -84,7 +84,8 @@ $form-padding: 20px;
   }
 
   form {
-    flex-direction: column; // Elementos en columna en móviles
+    flex-direction: column; 
+    justify-content: space-around;// Elementos en columna en móviles
     gap: 10px;
   }
 }

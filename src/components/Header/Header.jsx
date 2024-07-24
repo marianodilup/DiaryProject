@@ -10,13 +10,13 @@ function Header() {
   return (
     <header className="header-container">
       <nav className="nav-container">
-        <Link to="/ListPost">
+        <Link  className="link-nav" to="/ListPost">
           <img className="logo" src="../../src/images/LogoMyDiary.png" alt="" />
         </Link>
         <div className={`menu ${menuOpen ? "active" : ""}`}>
-          <Link to="/ListPost"> Mi diario</Link>
-          <Link to="/CreatePost"> Crear nueva entrada</Link>
-          <Link to="/logout"> Cerrar sesión</Link>
+          <Link className="link-nav"  to="/ListPost"> Mi diario</Link>
+          <Link className="link-nav"  to="/CreatePost"> Crear nueva entrada</Link>
+          <Link className="link-nav"  to="/logout"> Cerrar sesión</Link>
         </div>
         <div className="hamburguer" onClick={toggleMenu}>
           <svg

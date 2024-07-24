@@ -1,21 +1,21 @@
-.EditPost {
+/* .EditPost {
     display: flex;
     flex-direction: column;
     max-width: 600px;
-    margin: auto;
+    margin-top: 10px;
     padding: 1rem;
     background-color: white;
     border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     
-    // Estilo del campo de entrada
-    fieldset {
+    
+  .fieldset-edit {
       border: none;
       margin-bottom: 1rem;
       padding: 0;
     }
   
-    label {
+  .label-edit{
       display: block;
       font-size: 1rem;
       color: #6e208f;
@@ -44,7 +44,7 @@
       resize: vertical;
     }
   
-    button {
+    .button-edit {
       background-color: #6e208f;
       color: #fff;
       border: none;
@@ -59,7 +59,7 @@
       }
     }
   
-    // Responsividad
+  
     @media (max-width: 768px) {
       padding: 0.5rem;
   
@@ -69,9 +69,135 @@
         font-size: 0.9rem;
       }
   
-      button {
+      .button-edit {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+  } */
+
+  $primary-color: #6e208f; 
+$error-color: #e74c3c;
+$text-color: #2c3e50;
+$border-radius: 20px;
+
+.EditPost {
+  padding: 45px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .fieldset-edit {
+    width: 60%;
+    background-color: white;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+
+    .label-edit {
+      margin-bottom: 5px;
+      color: $text-color;
+      font-weight: 800;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background-color: #fff;
+  
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      }
+    }
+  
+    textarea {
+      resize: vertical;
+    }
+
+    .button-edit {
+      background-color: #6e208f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: grey;
+      }
+    }
+  
+  
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+  
+      input[type="text"],
+      input[type="date"],
+      textarea {
+        font-size: 0.9rem;
+      }
+  
+      .button-edit {
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
       }
     }
   }
+  }
+
+
+@media (max-width: 768px) {
+  .create-post-container {
+    fieldset {
+      width: 80%;
+      padding: 20px;
+
+      button {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .create-post-container {
+    fieldset {
+      width: 100%;
+      padding: 10px;
+
+      label {
+        font-size: 14px;
+      }
+
+      input,
+      textarea {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+    }
+  }
+}

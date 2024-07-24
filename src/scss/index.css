@@ -2,11 +2,4 @@ html,
 body {
 background-color: rgb(232, 216, 232);
 font-family: 'Arial', sans-serif;
-  margin-top: 50px;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+} 
