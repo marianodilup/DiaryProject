@@ -35,7 +35,7 @@ function Login({ setUserData }) {
     <>
       <div className="login-container">
         <figure className="logo-landing">
-          <img src="../../src/images/LogoMyDiary.png" />
+          <img className="logo" src="../../src/images/LogoMyDiary.png" />
         </figure>
         <form className="form-container" onSubmit={handleForm}>
           <label className="login-label" htmlFor="email">

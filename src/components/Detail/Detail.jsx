@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { ApiContext } from "../Context/ApiContext";
 import { Link, useParams } from "react-router-dom";
