@@ -1,26 +1,100 @@
- .diary-post {
- 
-justify-content: center;
-    background-color: #f0f8ff;  
-    border-radius: 15px;
-    padding: 30px;
-    margin: 30px;
-    max-width: 700px;
-    font-family: 'Georgia, serif';
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #cdcdcd;
-    color: #171717; 
-    .img-post{
-      width: 80%;
-    }
-    .button-post{
-      background-color:burlywood;
-      color:black;
-    }
+$primary-color: #6e208f;
 
-    .link-post{
-      text-decoration: none;
-      color: #171717;
+.article-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+  
+    &:hover {
+      background-color: lighten($primary-color, 40%);
+      transform: translateY(-5px);
     }
-  } 
+  
+    &:active {
+      background-color: lighten($primary-color, 30%);
+      transform: translateY(-2px);
+    }
+  }
+
+.link-post {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-date {
+  font-size: 1.5rem;
+  color: rgb(167, 165, 165);
+  margin-bottom: 10px;
+  font-family: 'Arial', sans-serif;
+  font-weight: lighter;
+}
+
+.post-title {
+  font-size: 1.8rem;
+  color: black;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.img-desc-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure-post {
+  flex: 1.2;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.img-post {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-desc-container > p {
+  flex: 1.8;
+  margin: 0 10px; // Reducido el gap entre figure y p
+}
+
+.btns-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.button-post {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 15%);
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
   

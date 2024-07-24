@@ -4,12 +4,21 @@ import { ApiContext } from "../Context/ApiContext";
 import { Link, useParams } from "react-router-dom";
 import "./Detail.scss"
 
-function Detail() {
+function Detail({userData, authData, setAuthData}) {
   const { postList } = useContext(ApiContext);
   const { idPost } = useParams();
 
   const findPost = postList.find((post) => post.id === idPost);
 
+  useEffect(() => {
+    if (authData) {
+      getDataUserForAuth(userData.token).then((info) => {
+        setAuthData(info);
+      });
+    }
+  }, []);
+
+  
   return (
     <div>
       <button className="link_button">
