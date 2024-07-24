@@ -20,23 +20,23 @@ function Detail({userData, authData, setAuthData}) {
 
   
   return (
-    <div>
-      <button className="link_button">
-      <Link className="link" to={"/ListPost"}>
+    <div className="detail-container">
+      <Link className="detail-link" to={"/ListPost"}>
+      <button className="return-from-detail-btn">
         Volver a mi diario
+        </button>
       </Link>
-      </button>
-      <article className="diary-post">
-        <h2>{findPost.title}</h2>
-        <h3>{findPost.post}</h3>
-        <h4>{findPost.date}</h4>
+      <article className="diary-post-detail">
+        <h2 className="detail-title">{findPost.title}</h2>
+        <figure className="detail-figure">
         <img
-          className="img-post"
+          className="img-detail"
           src={findPost.img}
-          alt=""
-          width={300}
-          height={300}
+          alt={findPost.title}
         />
+        </figure>
+        <h3 className="detail-post">{findPost.post}</h3>
+        <h4 className="detail-date">{findPost.date}</h4>
       </article>
     </div>
   );
