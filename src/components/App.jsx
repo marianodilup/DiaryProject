@@ -28,7 +28,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Login setUserData={setUserData} userData={userData} />}
+              element={<Login setUserData={setUserData} />}
             />
             <Route 
             path="/register" 
@@ -79,13 +79,14 @@ function App() {
                 <AuthRoute
                   user={userData}
                   component={
-                    <EditPost userData={userData} setAuthData={setAuthData} />
+                    <EditPost userData={userData} authData={authData} setAuthData={setAuthData} />
                   }
                 />
               }
             />
-            <Route path="/Detail/:idPost" element={<Detail />} />
-            <Route path="*" element={<NotFound />} />
+            <Route 
+            path="/Detail/:idPost" element={<Detail userData={userData} authData={authData} setAuthData={setAuthData}/>} />
+            <Route path="*" element={<NotFound userData={userData} />} />
           </Routes>
         </SelectContext.Provider>
       </ApiContext.Provider>

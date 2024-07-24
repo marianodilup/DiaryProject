@@ -29,7 +29,7 @@ function Post({ post }) {
         <h4 className="post-date">{post.date}</h4>
         <h3 className="post-title">{post.title}</h3>
         <div className="img-desc-container">
-          <figure>
+          <figure className="figure-post">
           <img
             className="img-post"
             src={post.img}
