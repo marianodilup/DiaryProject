@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import "./EditPost.scss"
 
-function EditPost({userData, setAuthData }) {
+function EditPost({userData, authData, setAuthData }) {
 
     const { getPost, editId } = useContext(ApiContext);
     const [post, setPost] = useState({
@@ -20,10 +20,12 @@ function EditPost({userData, setAuthData }) {
     const navigate = useNavigate();
   
      useEffect(() => {
-      getDataUserForAuth(userData.token).then((info) => {
-        setAuthData(info);
-      })
-      console.log(post);
+      if (authData) {
+        getDataUserForAuth(userData.token).then((info) => {
+          setAuthData(info);
+        })
+        console.log(post);
+      }
     }, [post]); 
 
     const getEditPost = async () => {
