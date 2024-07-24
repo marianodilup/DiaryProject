@@ -5,6 +5,8 @@ import { getDataUserForAuth } from "../Services/UserApi";
 import { getPostById } from "../Services/ApiCrud";
 import { editPost } from "../Services/ApiCrud";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
+import "./EditPost.scss"
 
 function EditPost({userData, setAuthData }) {
 
@@ -55,11 +57,15 @@ function EditPost({userData, setAuthData }) {
 
 
   return (
+
+    <>
+
+ <Header/>
     
-    <form action="" onSubmit={handleSubmit}>
-      <fieldset>
-      <label htmlFor="date">Fecha: </label>
-      <input value={post.date} type="date" id="date" onChange={handleInput} />
+    <form className="EditPost" action="" onSubmit={handleSubmit}>
+      <fieldset >
+      <label   htmlFor="date">Fecha: </label>
+      <input  value={post.date} type="date" id="date" onChange={handleInput} />
       </fieldset>
       <fieldset>
       <label htmlFor="title">Título: </label>
@@ -87,6 +93,8 @@ function EditPost({userData, setAuthData }) {
       </fieldset>
       <button type="submit">Actualizar</button>
     </form>
+
+    </>
   )
 }
 

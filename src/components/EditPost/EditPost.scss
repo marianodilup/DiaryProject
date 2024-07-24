@@ -1,0 +1,77 @@
+.EditPost {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    // Estilo del campo de entrada
+    fieldset {
+      border: none;
+      margin-bottom: 1rem;
+      padding: 0;
+    }
+  
+    label {
+      display: block;
+      font-size: 1rem;
+      color: #6e208f;
+      margin-bottom: 0.5rem;
+    }
+  
+    input[type="text"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background-color: #fff;
+  
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      }
+    }
+  
+    textarea {
+      resize: vertical;
+    }
+  
+    button {
+      background-color: #6e208f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: grey;
+      }
+    }
+  
+    // Responsividad
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+  
+      input[type="text"],
+      input[type="date"],
+      textarea {
+        font-size: 0.9rem;
+      }
+  
+      button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+  }

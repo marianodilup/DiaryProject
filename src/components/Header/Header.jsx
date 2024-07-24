@@ -8,9 +8,11 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
   return (
-    <header>
-      <nav>
-        <Link to="/ListPost"><img className="logo" src="../../src/images/LogoMyDiary.png" alt="" /></Link>
+    <header className="header-container">
+      <nav className="nav-container">
+        <Link to="/ListPost">
+          <img className="logo" src="../../src/images/LogoMyDiary.png" alt="" />
+        </Link>
         <div className={`menu ${menuOpen ? "active" : ""}`}>
           <Link to="/ListPost"> Mi diario</Link>
           <Link to="/CreatePost"> Crear nueva entrada</Link>

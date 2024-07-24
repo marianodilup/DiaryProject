@@ -1,3 +1,12 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    
+}; 
+
+
+
 $primary-color: #6e208f;
 $text-color: #2c3e50;
 $header-bg-color: #ffffff;
@@ -5,13 +14,15 @@ $highlight-color: #ff4081;
 $header-padding: 20px;
 $header-font-size: 18px;
 
-header {
+.header-container {
   background-color: $header-bg-color;
   padding: $header-padding;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  nav {
+ .nav-container {
+    max-width: 1200px; 
+   margin: 0 auto;  
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,19 +37,15 @@ header {
     .menu {
       display: flex;
       gap: 20px;
-      align-items: center;  // Asegura que los elementos del menú estén centrados verticalmente
+      align-items: center;  
 
-      a {
-        color: $text-color;
-        text-decoration: none;
-        font-size: $header-font-size;
-        transition: color 0.3s, border-bottom 0.3s;
+    
 
         &:hover {
           color: $highlight-color;
           border-bottom: 2px solid $highlight-color;
         }
-      }
+      
     }
 
     .hamburguer {
@@ -64,7 +71,7 @@ header {
 @media (max-width: 768px) {
   header {
     nav {
-      justify-content: space-between; // Asegura que el logo esté a la izquierda y el menú hamburguesa a la derecha
+      justify-content: space-between; 
       align-items: center;
 
       .menu {
@@ -86,7 +93,7 @@ header {
       }
 
       .hamburguer {
-        display: block; // Mostrar en dispositivos móviles
+        display: block; 
       }
     }
   }
