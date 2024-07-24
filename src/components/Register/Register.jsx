@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../Services/UserApi";
-import "./Register.scss"
+import "./Register.scss";
+import { Link, Navigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ const Register = () => {
   });
 
   const [registerCompleted, setRegisterCompleted] = useState("");
-  
+  const [redirectToLogin, setRedirectToLogin] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -23,55 +24,84 @@ const Register = () => {
     e.preventDefault();
     registerUser(formData).then((data) => {
       console.log(data);
-      
+
       if (data.data.name && data.data.email && data.data.password) {
         setRegisterCompleted("¡Te has registrado correctamente!");
         setFormData({
           name: "",
           email: "",
           password: "",
-        })
-      } 
-    })
+        });
+      }
+    });
   };
 
+  const handleLoginRedirect = () => {
+    setRedirectToLogin(true);
+  };
+
+  if (redirectToLogin) {
+    return <Navigate to="/" />;
+  }
+
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
+    <div className="register-wrapper">
+      <div className="register-container">
+        <div className="form-container">
+          <h2></h2>
+          <img src="../../src/images/LogoMyDiary.png" alt="Logo" />
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name" className="register-label">
+                Nombre:
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="register-input"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="register-label">
+                Email:
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="register-input"
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="register-label">
+                Contraseña:
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="register-input"
+              />
+            </div>
+            <p className={registerCompleted ? "success-message" : "no-success"}>
+              {registerCompleted}
+            </p>
+            <button type="submit" className="register-btn">
+              Registrate
+            </button>
+            <p className="iniciar-sesion">
+              ¿Ya tienes una cuenta? <Link to="/">Inicia sesión</Link>
+            </p>
+          </form>
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
-        <p className={registerCompleted ? "success-message" : "no-success"}>{registerCompleted}</p>
-        <button type="submit">Register</button>
-      </form>
+      </div>
     </div>
   );
 };

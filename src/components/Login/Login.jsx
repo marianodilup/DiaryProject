@@ -33,12 +33,14 @@ function Login({ setUserData }) {
 
   return (
     <>
-    <div className="login-container">
-      <figure className="logo-landing">
-        <img className="logo" src="../../src/images/LogoMyDiary.png" />
-      </figure>
+      <div className="login-container">
+        <figure className="logo-landing">
+          <img src="../../src/images/LogoMyDiary.png" />
+        </figure>
         <form className="form-container" onSubmit={handleForm}>
-          <label className="login-label" htmlFor="email">Email</label>
+          <label className="login-label" htmlFor="email">
+            Email
+          </label>
           <input
             className="login-input"
             type="text"
@@ -46,7 +48,9 @@ function Login({ setUserData }) {
             value={user.email}
             onChange={handleInput}
           />
-          <label className="login-label" htmlFor="password">Contraseña</label>
+          <label className="login-label" htmlFor="password">
+            Contraseña
+          </label>
           <input
             className="login-input"
             type="password"
@@ -55,10 +59,15 @@ function Login({ setUserData }) {
             onChange={handleInput}
           />
           <p className={error ? "error-message" : "no-error"}>{error}</p>
-          <button className="login-btn" type="submit">Iniciar sesión</button>
-          <p className="register-info"> ¿Todavía no tienes cuenta?<Link to="/register"> Regístrate </Link></p>
-      </form>
-    </div>
+          <button className="login-btn" type="submit">
+            Iniciar sesión
+          </button>
+          <p className="register-info">
+            {" "}
+            ¿Todavía no tienes cuenta?<Link to="/register"> Regístrate </Link>
+          </p>
+        </form>
+      </div>
     </>
   );
 }
