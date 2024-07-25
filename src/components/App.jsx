@@ -3,7 +3,6 @@ import { ApiContext, useApiContext } from "./Context/ApiContext";
 import CreatePost from "./CreatePost/CreatePost";
 import { SelectContext, useSelectContext } from "./Context/SelectContext";
 import ListPost from "./ListPost/ListPost";
-import Header from "./Header/Header";
 import Login from "./Login/Login";
 import NotFound from "./NotFound/NotFound";
 import AuthRoute from "./AuthRoute/AuthRoute";
