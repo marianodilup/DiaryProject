@@ -90,7 +90,9 @@ $form-padding: 20px;
     max-width: 90%;
     padding: 15px;
   }
- 
+  .inputDate{
+    display: none;
+   }
   .search-form {
     flex-direction: column;
     gap: 15px;
@@ -102,7 +104,9 @@ $form-padding: 20px;
     max-width: 95%;
     padding: 10px;
   }
- 
+ .inputDate{
+  display: none;
+ }
   .search-form {
     flex-direction: column;
     justify-content: space-around; // Elementos en columna en móviles
@@ -113,3 +117,4 @@ $form-padding: 20px;
     width: 100%; // Asegura que los fieldsets ocupen todo el ancho disponible
   }
 }
+

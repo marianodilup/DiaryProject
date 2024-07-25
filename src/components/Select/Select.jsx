@@ -28,9 +28,9 @@ const handleSelectYear = (e) => {
     <div className="select-container">
         <h3>Busca tus entradas</h3>
         <form className="search-form">
-            <fieldset className="search-fieldset">
-                <label className="search-label" htmlFor="date">Por fecha:</label>
-                <input type="date" name="date" id="date" value={date || ""} onChange={handleInputDate} />
+            <fieldset className="search-fieldset inputDate" >
+                <label className="search-label inputDate" htmlFor="date">Por fecha:</label>
+                <input className='inputDate' type="date" name="date" id="date" value={date || ""} onChange={handleInputDate} />
             </fieldset>
             <fieldset className="search-fieldset">
                 <label className="search-label" htmlFor="month">Por mes:</label>
