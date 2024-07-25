@@ -1,9 +1,10 @@
-*{
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
-    
-}; 
+
+
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
 
 $primary-color: #6e208f;
 $text-color: #2c3e50;
@@ -30,11 +31,13 @@ $form-padding: 20px;
     display: flex;
     flex-direction: row; // Elementos en línea en pantallas grandes
     gap: 20px;
+    flex-wrap: wrap; // Permite que los elementos se ajusten en pantallas más pequeñas
 
     .search-fieldset {
       border: none; // Sin borde predeterminado
       padding: 0;
       flex: 1; // Asegura que los elementos ocupen el mismo espacio
+      min-width: 200px; // Tamaño mínimo para cada campo
 
       .search-label {
         display: block;
@@ -59,10 +62,29 @@ $form-padding: 20px;
           outline: none;
         }
       }
+
+      .search-select {
+        /* No hay mucho que estilizar directamente en los elementos <option>, pero podemos ajustar el contenedor */
+        background-color: #fff;
+        appearance: none; // Elimina el estilo predeterminado del navegador
+        padding-right: 30px; // Espacio para el icono desplegable
+      }
+
+      /* Agregar un pseudo-elemento para el icono desplegable en select */
+      .search-select::after {
+        content: '▼'; // Simple flecha hacia abajo
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none; // Para que el clic no interfiera con la selección
+        color: $text-color;
+      }
+
+      position: relative; // Para que el pseudo-elemento se alinee correctamente
     }
   }
 }
-
 
 @media (max-width: 768px) {
   .select-container {
@@ -76,7 +98,6 @@ $form-padding: 20px;
   }
 }
 
-
 @media (max-width: 480px) {
   .select-container {
     max-width: 95%;
@@ -85,9 +106,10 @@ $form-padding: 20px;
 
   .search-form {
     flex-direction: column; 
-    justify-content: space-around;// Elementos en columna en móviles
+    justify-content: space-around; // Elementos en columna en móviles
     gap: 10px;
   }
+  
   .search-fieldset {
     width: 100%; // Asegura que los fieldsets ocupen todo el ancho disponible
   }
