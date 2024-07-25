@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../images/LogoMyDiary.png"
 import "./Header.scss";
 
 function Header() {
@@ -11,7 +12,7 @@ function Header() {
     <header className="header-container">
       <nav className="nav-container">
         <Link  className="link-nav" to="/ListPost">
-          <img className="logo" src="../../src/images/LogoMyDiary.png" alt="" />
+          <img className="logo" src={Logo} alt="" />
         </Link>
         <div className={`menu ${menuOpen ? "active" : ""}`}>
           <Link className="link-nav"  to="/ListPost"> Mi diario</Link>

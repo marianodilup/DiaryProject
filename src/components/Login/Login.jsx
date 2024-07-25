@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.scss";
 import { getDataFromApiUser } from "../Services/UserApi";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from "../../images/LogoMyDiary.png"
 
 const INITIAL_STATE = {
   email: "",
@@ -35,7 +36,7 @@ function Login({ setUserData }) {
     <>
       <div className="login-container">
         <figure className="logo-landing">
-          <img className="logo" src="../../src/images/LogoMyDiary.png" />
+          <img className="logo" src={Logo} />
         </figure>
         <form className="form-container" onSubmit={handleForm}>
           <label className="login-label" htmlFor="email">
