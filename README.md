@@ -17,7 +17,6 @@ El proyecto está versionado utilizando Git. Contiene varias ramas para gestiona
    - Rama de desarrollo donde se integran nuevas características antes de ser fusionadas con `main`. Dentro de `Dev` se crearon y gestionaron varias ramas para desarrollar y fusionar nuevas características a través de componentes y solucionar errores. Cada desarrollador a creado las ramas necesaria para llevar a cabo el proyecto:
 
 Ramas creadas por https://github.com/marianodilup:
-
 $ dev
 editPost-header-styles
 formCreatePost
@@ -110,6 +109,9 @@ Para el diseño de la aplicación, utilizamos Figma para realizar un boceto de l
 
 
 ## Proceso de Desarrollo:
+
+Todas las tareas en las que se ha dividido el proyecto: 
+https://github.com/users/marianodilup/projects/3/views/1
 
 1. **Configuración Inicial del Proyecto**
    - Inicializamos el proyecto en React y configuramos Vite para el entorno de desarrollo.
