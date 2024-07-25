@@ -13,6 +13,13 @@ $border-radius: 20px;
   align-items: center;
   height: 100vh;
 
+  form{
+    display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  }
+
   fieldset {
     width: 60%;
     background-color: white;
