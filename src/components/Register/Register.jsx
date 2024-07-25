@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { registerUser } from "../Services/UserApi";
 import "./Register.scss";
 import { Link, Navigate } from "react-router-dom";
+import Logo from "../../images/LogoMyDiary.png"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ const Register = () => {
       <div className="register-container">
         <div className="form-container">
           <h2></h2>
-          <img src="../../src/images/LogoMyDiary.png" alt="Logo" />
+          <img src={Logo} alt="Logo" />
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="register-label">
