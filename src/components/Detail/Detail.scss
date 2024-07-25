@@ -1,0 +1,82 @@
+$primary-color: #6e208f;
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+
+}
+
+.detail-link {
+  align-self: flex-start;
+  margin-bottom: 20px;
+
+}
+
+.return-from-detail-btn {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 15px;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 15%);
+    transform: translateY(0);
+  }
+}
+
+.diary-post-detail {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 800px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 20px;
+}
+
+.detail-title,
+.detail-figure,
+.detail-post {
+  width: 100%;
+}
+
+.detail-post {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+
+.detail-figure {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+
+.img-detail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.detail-date {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  color: gray;
+  margin-top: 20px;
+}

@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { ApiContext } from "../Context/ApiContext";
 import { Link, useParams } from "react-router-dom";
 import "./Detail.scss"
+import Header from "../Header/Header";
+
 
 function Detail({userData, authData, setAuthData}) {
   const { postList } = useContext(ApiContext);
@@ -20,6 +22,8 @@ function Detail({userData, authData, setAuthData}) {
 
   
   return (
+    <>
+    <Header />
     <div className="detail-container">
       <Link className="detail-link" to={"/ListPost"}>
       <button className="return-from-detail-btn">
@@ -39,6 +43,7 @@ function Detail({userData, authData, setAuthData}) {
         <h4 className="detail-date">{findPost.date}</h4>
       </article>
     </div>
+    </>
   );
 }
 

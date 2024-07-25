@@ -1,82 +1,4 @@
-/* .EditPost {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin-top: 10px;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    
-    
-  .fieldset-edit {
-      border: none;
-      margin-bottom: 1rem;
-      padding: 0;
-    }
-  
-  .label-edit{
-      display: block;
-      font-size: 1rem;
-      color: #6e208f;
-      margin-bottom: 0.5rem;
-    }
-  
-    input[type="text"],
-    input[type="date"],
-    textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 1rem;
-      box-sizing: border-box;
-      background-color: #fff;
-  
-      &:focus {
-        border-color: #007bff;
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-      }
-    }
-  
-    textarea {
-      resize: vertical;
-    }
-  
-    .button-edit {
-      background-color: #6e208f;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-  
-      &:hover {
-        background-color: grey;
-      }
-    }
-  
-  
-    @media (max-width: 768px) {
-      padding: 0.5rem;
-  
-      input[type="text"],
-      input[type="date"],
-      textarea {
-        font-size: 0.9rem;
-      }
-  
-      .button-edit {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-      }
-    }
-  } */
-
-  $primary-color: #6e208f; 
+$primary-color: #6e208f; 
 $error-color: #e74c3c;
 $text-color: #2c3e50;
 $border-radius: 20px;
@@ -91,6 +13,11 @@ $border-radius: 20px;
   align-items: center;
   height: 100vh;
 
+  .edit-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
   .fieldset-edit {
     width: 60%;
     background-color: white;
@@ -100,7 +27,8 @@ $border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-
+    margin-top: 200px;
+  }
 
 
     .label-edit {
@@ -149,7 +77,7 @@ $border-radius: 20px;
     }
   
   
-    @media (max-width: 768px) {
+/*     @media (max-width: 768px) {
       padding: 0.5rem;
   
       input[type="text"],
@@ -164,16 +92,23 @@ $border-radius: 20px;
       }
     }
   }
-  }
+  } */
 
 
 @media (max-width: 768px) {
+  padding: 0.5rem;
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    font-size: 0.9rem;
+  }
   .create-post-container {
-    fieldset {
+
+    .fieldset-edit {
       width: 80%;
       padding: 20px;
 
-      button {
+      .button-edit {
         font-size: 14px;
       }
     }
@@ -182,11 +117,11 @@ $border-radius: 20px;
 
 @media (max-width: 480px) {
   .create-post-container {
-    fieldset {
+    .fieldset-edit {
       width: 100%;
       padding: 10px;
 
-      label {
+      .label-edit {
         font-size: 14px;
       }
 
@@ -195,9 +130,10 @@ $border-radius: 20px;
         font-size: 14px;
       }
 
-      button {
+      .button-edit {
         font-size: 14px;
       }
     }
   }
+}
 }

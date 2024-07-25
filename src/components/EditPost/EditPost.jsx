@@ -64,6 +64,7 @@ function EditPost({ userData, authData, setAuthData }) {
 
       <form className="EditPost" action="" onSubmit={handleSubmit}>
         <fieldset className="fieldset-edit">
+        <h2 className="edit-title">Edita tu entrada</h2>
           <label className="label-edit" htmlFor="date">
             Fecha:{" "}
           </label>
@@ -97,7 +98,7 @@ function EditPost({ userData, authData, setAuthData }) {
           ></textarea>
 
           <label className="label-edit" htmlFor="img">
-            imágen:{" "}
+            URL de imagen:{" "}
           </label>
           <input
             value={post.img}

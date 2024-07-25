@@ -1,14 +1,15 @@
 $primary-color: #6e208f;
 
-.article-post {
+.diary-post {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: white;
+  border-radius: 20px;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px;/*  */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   transition: background-color 0.3s, transform 0.3s;
   

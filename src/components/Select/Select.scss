@@ -26,17 +26,17 @@ $form-padding: 20px;
     margin-bottom: 20px;
   }
 
-  form {
+  .search-form {
     display: flex;
     flex-direction: row; // Elementos en línea en pantallas grandes
     gap: 20px;
 
-    fieldset {
+    .search-fieldset {
       border: none; // Sin borde predeterminado
       padding: 0;
       flex: 1; // Asegura que los elementos ocupen el mismo espacio
 
-      label {
+      .search-label {
         display: block;
         font-size: $label-font-size;
         color: $text-color;
@@ -44,7 +44,7 @@ $form-padding: 20px;
       }
 
       input[type="date"],
-      select {
+      .search-select {
         width: 100%;
         padding: 10px;
         border: 1px solid #ccc;
@@ -70,7 +70,7 @@ $form-padding: 20px;
     padding: 15px;
   }
 
-  form {
+  .search-form {
     flex-direction: column; 
     gap: 15px;
   }
@@ -83,9 +83,12 @@ $form-padding: 20px;
     padding: 10px;
   }
 
-  form {
+  .search-form {
     flex-direction: column; 
     justify-content: space-around;// Elementos en columna en móviles
     gap: 10px;
+  }
+  .search-fieldset {
+    width: 100%; // Asegura que los fieldsets ocupen todo el ancho disponible
   }
 }

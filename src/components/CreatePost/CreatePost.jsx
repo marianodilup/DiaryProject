@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { addPost } from "../Services/ApiCrud";
 import { getDataUserForAuth } from "../Services/UserApi";
 import Header from "../Header/Header";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost({ userData, setAuthData }) {
   const { getPost } = useContext(ApiContext);
@@ -14,6 +15,7 @@ function CreatePost({ userData, setAuthData }) {
     date: "",
     img: "",
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     getDataUserForAuth(userData.token).then((info) => {
@@ -38,6 +40,7 @@ function CreatePost({ userData, setAuthData }) {
       date: "",
       img: "",
     });
+    navigate("/ListPost")
   };
   return (
     <>
@@ -64,7 +67,7 @@ function CreatePost({ userData, setAuthData }) {
               onChange={handleInput}
             ></textarea>
 
-            <label htmlFor="img">imágen: </label>
+            <label htmlFor="img">URL de imagen: </label>
             <input type="text" id="img" alt="" onChange={handleInput} />
             <button type="submit">Crear nueva entrada</button>
           </form>

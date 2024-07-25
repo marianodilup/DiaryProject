@@ -27,14 +27,14 @@ const handleSelectYear = (e) => {
 
     <div className="select-container">
         <h3>Busca tus entradas</h3>
-        <form>
-            <fieldset>
-                <label htmlFor="date">Por fecha:</label>
+        <form className="search-form">
+            <fieldset className="search-fieldset">
+                <label className="search-label" htmlFor="date">Por fecha:</label>
                 <input type="date" name="date" id="date" value={date} onChange={handleInputDate} />
             </fieldset>
-            <fieldset>
-                <label htmlFor="month">Por mes:</label>
-                <select name="month" id="month" value={month} onChange={handleSelectMonth}>
+            <fieldset className="search-fieldset">
+                <label className="search-label" htmlFor="month">Por mes:</label>
+                <select className="search-select" name="month" id="month" value={month} onChange={handleSelectMonth}>
                     <option value="">Todos los meses</option>
                     <option value="-01-">Enero</option>
                     <option value="-02-">Febrero</option>
@@ -50,9 +50,9 @@ const handleSelectYear = (e) => {
                     <option value="-12-">Diciembre</option>
                 </select>
             </fieldset>
-            <fieldset>
-                <label htmlFor="year">Por año:</label>
-                <select name="year" id="year" value={year} onChange={handleSelectYear}>
+            <fieldset className="search-fieldset">
+                <label className="search-label" htmlFor="year">Por año:</label>
+                <select className="search-select" name="year" id="year" value={year} onChange={handleSelectYear}>
                     <option value="">Todos los años</option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
