@@ -30,7 +30,7 @@ const handleSelectYear = (e) => {
         <form className="search-form">
             <fieldset className="search-fieldset">
                 <label className="search-label" htmlFor="date">Por fecha:</label>
-                <input type="date" name="date" id="date" value={date} onChange={handleInputDate} />
+                <input type="date" name="date" id="date" value={date || ""} onChange={handleInputDate} />
             </fieldset>
             <fieldset className="search-fieldset">
                 <label className="search-label" htmlFor="month">Por mes:</label>

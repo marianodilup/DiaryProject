@@ -11,7 +11,8 @@ $border-radius: 20px;
 
 .login-container {
   padding: 10px;
-  width: 1000px;
+  /* width: 1000px; */
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -28,7 +29,8 @@ $border-radius: 20px;
     align-items: center;
 
     .logo {
-      width: 300px;
+      max-width: 300px;
+      width: 100%;
       height: auto;
     }
   }
@@ -38,7 +40,7 @@ $border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100px;
+   /*  width: 100px; */
     max-width: 400px;
     height: 370px;
     padding: 40px;
@@ -138,7 +140,7 @@ $border-radius: 20px;
     figure.logo-landing {
       margin-bottom: 20px; 
       img {
-        width: 200px; 
+        max-width: 200px; 
       }
     }
 
@@ -166,7 +168,7 @@ $border-radius: 20px;
     figure.logo-landing {
       margin-bottom: 20px; 
       img {
-        width: 150px; 
+        max-width: 150px; 
       }
     }
 
